@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!-- No, there isn't any content on this site yet. Nor is this comment a hint. -->
+<html>
+  <head>
+    <title>overlook research</title>
+    <style>
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+input {-webkit-appearance: none;-moz-appearance: none;white-space: pre;border:none;padding:0;}
+input, input::-webkit-input-placeholder,input::-moz-placeholder {font-family:Helvetica, Arial, sans-serif;}
+html, body {line-height:1;height:100%;font-size:24pt;letter-spacing:1px;text-align:center;font-weight:200;background:#f5f5f5;color:RGBA(0,0,0,0.7);font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;}
+b {font-weight: 800}
+.top {font-size:80pt;margin-left:-0.5em;padding-right:0.5em;padding-top:0.5em;padding-bottom:0.5em;width:100%;text-align:center;font-family:"Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;background-color:#2E7D32;color:#fff;line-height: 1.05em}
+.or {margin-left:0.9em;padding-left:0.8em;padding-bottom:0em;border-bottom: 4px solid #fff;}
+form {margin:1em auto 1em auto;width:18em;}
+input#email {font-size:14pt;padding-top:10px;padding-bottom:8px;padding-left:8px; width:400px;}
+input#submitbutton {font-size:14pt;padding:11px;padding-top:13px;background-color:#88888f;color:#f8f8fc;}
+.round {border-radius:4px;min-height: 28px;}
+.tag {padding-left:2.15em;margin-top:-0.9em;font-size:34.4pt;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;}
+.body {margin:1em auto 1em auto;width:28em;line-height: 1.1em;}
+.footer {position:fixed;font-size:24px;bottom:1em;width:100%;font-size:12pt;text-align:center;line-height:2em;background-color:#1B5E20;color:#fff;}
+    </style>
+    <script src="//www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+    <meta name="viewport" content="initial-scale=0.5, width=device-width, height=device-height, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no, target-densitydpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <div class="top">
+      <div><span class="or">overlook</span></div>
+      <div>research</div>
+      <div class="tag">because words matter</div>
+    </div>
+    <div id="formmaybe">
+      <form>
+        <input class="round" id="email" type="text" placeholder="Curious about what we're building?" maxLength=100 />
+        <input class="round" type="submit" id="submitbutton" value="Submit" />
+      </form>
+    </div>
+    <div class="body">
+    Overlook Research is building on our experiences at Facebook, Coliloquy, Walletin, Cryptic Studios, Linden Lab, and EMI to create the future knowledge and communication.<br /><br />We are hiring designers and javascript developers.<br /><br />If interested, send a resume or portfolio link to <a href="mailto:hiring@overlookresearch.com">hiring@overlookresearch.com</a>.
+    </div>
+	  <div class="footer">
+    &copy; 2015 Overlook Research, inc
+    </div>
+  </body>
+  <script>
+     document.getElementById('submitbutton').onclick = saveEmail;
+
+    function replaceForm() {
+      document.getElementById('formmaybe').textContent = "Thank you for connecting. We'll be in touch soon!";
+    }
+
+    function saveEmail(e) {
+      Parse.initialize("TXQTT1FLNd9YSiKDFPPzWSnDWFC9F9pJwPMVSu1E", "cGCb2Tll3K3QcsZCVaw9MS6xsl62WBbVVekyIm8V");
+
+      var email = document.getElementById('email').value;
+      if (email.length && email.indexOf("@") !== -1) {
+        var Email = Parse.Object.extend("email");
+        var emailObject = new Email();
+        emailObject.save({email: email}).then(function(object) {
+          replaceForm();
+        });
+      } else {
+      	e.preventDefault();
+        document.getElementById('email').value = "";
+      }
+      return false;
+    }
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57795194-1', 'auto');
+  ga('send', 'pageview');
+  </script>  
+</html>
